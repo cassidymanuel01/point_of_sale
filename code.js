@@ -108,7 +108,7 @@ const properties = [
     bathroom: 1,
     cars: 1,
     size: "1200 Sq Ft",
-  },
+  }
 ];
 
 let allProperties = document.getElementById("propertyList");

@@ -36,14 +36,28 @@ header {
 }
 
 #btnSearch{
-    width: 200px;
-    height: 40px;
+    width: 200px !important;
+    height: 40px !important;
 }
 
-/* #btn :hover {
-    color: blue;
+#btn :hover {
+    color: blue !important;
     background-color: blue;
-} */
+}
+
+.card-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    overflow-x: hidden;
+}
+
+
+
+
+
+
+
 
 #footer {
     background-color: rgb(51, 51, 212);
