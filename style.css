@@ -26,13 +26,14 @@ header {
 }
 
 #btn{
-    background-color: black;
+    background-color: grey;
     color: white;
     height: 20px;
     width: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: gray;
 }
 
 #btnSearch{
@@ -40,16 +41,26 @@ header {
     height: 40px !important;
 }
 
-#btn :hover {
+#btn:hover {
+    background-color: grey !important;
     color: blue !important;
-    background-color: blue;
 }
 
-.card-img{
+/* .img-fluid{
     height: 100%;
     width: 100%;
     object-fit: cover;
     overflow-x: hidden;
+} */
+
+img :hover{
+  background-color: gray ;
+
+}
+
+.card{
+  width: 600px;
+  height: 400px;
 }
 
 

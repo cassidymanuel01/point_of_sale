@@ -1,7 +1,7 @@
 const properties = [
   {
     id: 1,
-    img: "../images/using/400_modern_apartment_design.jpg",
+    img: "./images/ap22.jpg",
     title: "For Rent",
     descr: "New Apartment Nice View",
     amount: "$11,000/mo",
@@ -12,7 +12,7 @@ const properties = [
   },
   {
     id: 2,
-    img: "https://postimg.cc/pyyZk7xg",
+    img: "./images/using/ap1.jpg",
     title: "For Rent",
     descr: "Light And Modern Apartment",
     amount: "$4,500/mo",
@@ -23,7 +23,7 @@ const properties = [
   },
   {
     id: 3,
-    img: "https://postimg.cc/0M1CQ5hm",
+    img: "./images/using/ap3.jpg",
     title: "For Rent",
     descr: "Comfortable Apartment",
     amount: "$3,700/mo",
@@ -34,7 +34,7 @@ const properties = [
   },
   {
     id: 4,
-    img: "https://postimg.cc/68DxcS8c",
+    img: "./images/using/apartment-design-impresses-with-innovative-and-sustainable-solutions-0-624859942.jpg",
     title: "For Rent",
     descr: "Relaxing Apartment",
     amount: "$2,800/mo",
@@ -45,7 +45,7 @@ const properties = [
   },
   {
     id: 5,
-    img: "https://postimg.cc/gXm5BPmV",
+    img: "./images/using/istockphoto-1182454305-612x612.jpg",
     title: "For Rent",
     descr: "Comfortable Apartment",
     amount: "$1,600/mo",
@@ -56,7 +56,7 @@ const properties = [
   },
   {
     id: 6,
-    img: "https://postimg.cc/NLVDKwSd",
+    img: "./images/using/scandinavian-style-apartment-nouvel-interior-5.jpg",
     title: "For Rent",
     descr: "Complex",
     amount: "$5,600/mo",
@@ -67,7 +67,7 @@ const properties = [
   },
   {
     id: 7,
-    img: "https://postimg.cc/t7LdXNnf",
+    img: "./images/using/Sleek-and-transitional-modern-apartment-design-scaled.jpg",
     title: "For Rent",
     descr: "Green View Design",
     amount: "$3,500/mo",
@@ -78,7 +78,7 @@ const properties = [
   },
   {
     id: 8,
-    img: "https://postimg.cc/MMnRwn6q",
+    img: "./images/using/sophieeptonphotographyindependentpenthouse-35.jpg",
     title: "For Rent",
     descr: "Modern Loft Apartment",
     amount: "$3,750/mo",
@@ -89,7 +89,7 @@ const properties = [
   },
   {
     id: 9,
-    img: "https://postimg.cc/PCfChCy9",
+    img: "./images/using/Stylish-Singapore-Apartment_7.jpg",
     title: "For Rent",
     descr: "Renovated Kitchen Apartment",
     amount: "$1,890/mo",
@@ -100,7 +100,7 @@ const properties = [
   },
   {
     id: 10,
-    img: "https://postimg.cc/SXy7BQYx",
+    img: "./images/using/z.jpg",
     title: "For Rent",
     descr: "Contemporary Apartment ",
     amount: "$13,000/mo",
@@ -108,7 +108,7 @@ const properties = [
     bathroom: 1,
     cars: 1,
     size: "1200 Sq Ft",
-  }
+  },
 ];
 
 let allProperties = document.getElementById("propertyList");
@@ -118,31 +118,31 @@ let newProperties = JSON.parse(localStorage.getItem("data"))
   : [];
 
 function data() {
-const propertyContainer = document.getElementById("propertyList");
-properties.forEach((e) => {
-  propertyContainer.innerHTML += `
-        <div class = "card my-2">
+  const propertyContainer = document.getElementById("propertyList");
+  properties.forEach((e) => {
+    console.log(e);
+    propertyContainer.innerHTML += `
+    <div class = "col-md-6 d-flex justify-content-center">
+      <div style="background: url(${e.img}); background-size:cover;background-repeat:no-repeat" class = "card my-2">
         <div class = "card-body">
-        <div class = "card-img">
-        <img class ="w-100 img-fliud" scr=${e.img} alt ="${e.title} image"/>
+          <div class = "row justify-content-start align-items-end h-100">
+            <div class = "col-md-6">
+              <button id = "btn" class ="text-white">${e.title}</button>
+              <h5 class = "text-white">${e.descr}</h5>
+              <h6 class = " text-white fw-bold">${e.amount}</h6>
+              <div class =" d-flex gap-3">
+                <h6 class = "text-white"><i class="fa-solid fa-bed text-white"></i>${e.beds}</h6>
+                <h6 class = "text-white"><i class="fa-solid fa-bath text-white"></i>${e.bathroom}</h6>
+                <h6 class = "text-white"><i class="fa-solid fa-car text-white"></i>${e.cars}</h6>
+                <h6 class = "text-white"><i class="bi bi-building fw-bold text-white"></i>${e.size}</h6>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class = "row">
-        <div class = "col-md-6">
-        <button id = "btn" class ="btn-primary">${e.title}</button>
-        <h5>${e.descr}</h5>
-        <h6 class = "fw-bold">${e.amount}</h6>
-        <div class =" d-flex gap-3">
-        <h6><i class="fa-solid fa-bed"></i>${e.beds}</h6>
-        <h6><i class="fa-solid fa-bath"></i>${e.bathroom}</h6>
-        <h6><i class="fa-solid fa-car"></i>${e.cars}</h6>
-        <h6><i class="bi bi-building fw-bold"></i>${e.size}</h6>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>`;
-})
-};
+      </div>
+    </div>`;
+  });
+}
 
 data();
 
@@ -162,26 +162,26 @@ function deleteData(event) {
   event.target.parentElement.remove();
 }
 
-// function search() {
-//     allProperties.innerHTML = ''
-//     let search = newProperties.filter((e) => {
+function search() {
+    allProperties.innerHTML = ''
+    let search = newProperties.filter((e) => {
+      
+    })
+}
 
-//     })
-// }
-
-// function search() {
-//     var input, filter, ul, li, a, i, txtValue;
-//     input = document.getElementById("btnSearch");
-//     filter = input.value.toUpperCase();
-//     ul = document.getElementById("propertyList");
-//     li = ul.getElementsByTagName("li");
-//     for (i = 0; i < li.length; i++) {
-//         a = li[i].getElementsByTagName("a")[0];
-//         txtValue = a.textContent || a.innerText;
-//         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//             li[i].style.display = "";
-//         } else {
-//             li[i].style.display = "none";
-//         }
-//     }
-// };
+function search() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("btnSearch");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("propertyList");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+};
