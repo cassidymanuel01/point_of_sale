@@ -25,7 +25,25 @@ header {
   font-family: "Titillium Web", sans-serif;
 }
 
+#btn{
+    background-color: black;
+    color: white;
+    height: 20px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+#btnSearch{
+    width: 200px;
+    height: 40px;
+}
+
+/* #btn :hover {
+    color: blue;
+    background-color: blue;
+} */
 
 #footer {
     background-color: rgb(51, 51, 212);
