@@ -12,6 +12,11 @@ header {
   color: black;
 }
 
+#bttn{
+  background-color: blue !important;
+  color: white !important;
+}
+
 #landing {
   background-image:url(./images/dubaiclouds1.webp);
   background-size: cover;
