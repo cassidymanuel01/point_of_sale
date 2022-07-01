@@ -145,7 +145,6 @@ const propertyContainer = document.getElementById("tableList");
 propertyContainer.innerHTML ='';
 lists.forEach((e) => {
   propertyContainer.innerHTML += `
-        <tbody class="border border-2 border-dark">
         <tr>
         <th scope="row">${e.id}</th>
         <td><img src="${e.img}" alt ="img"/></td>
@@ -155,73 +154,84 @@ lists.forEach((e) => {
         <td>${e.beds}</td>
         <td>${e.cars}</td>
         <td>${e.bathroom}</td>
-        <td><button id="edit" class ="border" onclick ="editsData()"><i  data-bs-toggle="modal" data-bs-target="#EditModal" class="fa-solid fa-pen-to-square"></i></button></td>
-        <td><button id="delete" class ="border" onclick ="deleteData()" ><i data-bs-toggle="modal" data-bs-target="#ConfirmModal" class="fa-solid fa-trash"></i></button></td>
+        <td><button id="edit" class ="border" type= "button" onclick ="editsData()"><i class="fa-solid fa-pen-to-square"></i></button></td>
+        <td><button class ="border"><i class="fa-solid fa-trash" onclick ="deleteData(${e.id})"></i></button></td>
         </tr>
-        </tbody>
         `;
 })
 };
 
 editData(newProperties);
 
-function editsData() {
-  const edit = document.getElementById("edit").value;
-  edit.innerHTML = '';
-  editContainer.push((e) => {
-    editContainer.innerHTML +=`
-    <div class = "col-md-6 d-flex justify-content-center">
-      <div style="background: url(${e.img}); background-size:cover;background-repeat:no-repeat" class= "card my-2">
-      <div id="hover">
-      </div>
-        <div class = "card-body">
-          <div class = "row justify-content-start align-items-end h-100">
-            <div class = "col-md-6">
-              <button id = "btn" class ="text-white rounded">${e.title}</button>
-              <h5 class = "text-white">${e.descr}</h5>
-              <h6 class = " text-white fw-bold">$${e.amount}</h6>
-              <div class =" d-flex gap-3">
-                <h6 class = "text-white"><i class="fa-solid fa-bed text-white"></i>${e.beds} Bedrooms</h6>
-                <h6 class = "text-white"><i class="fa-solid fa-bath text-white"></i>${e.bathroom}</h6>
-                <h6 class = "text-white"><i class="fa-solid fa-car text-white"></i>${e.cars}</h6>
-                <h6 class = "text-white"><i class="bi bi-building fw-bold text-white"></i>${e.size}</h6>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    `
-  })
-  edit.push((edit) => {
-    id = '',
-    amount = '',
-    descr = '',
-    size = '',
-    beds = '',
-    cars = '',
-    bathroom = '',
-    location = '',
-    type = ''
-  });
-  editsData();
-  localStorage.setItem("data", JSON.stringify(edit));
-}
-
-
-function deleteData(event) {
-  deleteData = event;
-}
-
-function clearDelete(){
-  deleteData = undefined;
-}
-
-// function itemDelete(event){
-//   let  newProperties = JSON.parse(localStorage.getItem("data"));
-
-
+// function editsData(edit) {
+//   const edit = document.getElementById("edit").value;
+//   edit.innerHTML = '';
+//   editContainer.push((e) => {
+//     editContainer.innerHTML +=`
+//     <div class = "col-md-6 d-flex justify-content-center">
+//       <div style="background: url(${e.img}); background-size:cover;background-repeat:no-repeat" class= "card my-2">
+//       <div id="hover">
+//       </div>
+//         <div class = "card-body">
+//           <div class = "row justify-content-start align-items-end h-100">
+//             <div class = "col-md-6">
+//               <button id = "btn" class ="text-white rounded">${e.title}</button>
+//               <h5 class = "text-white">${e.descr}</h5>
+//               <h6 class = " text-white fw-bold">$${e.amount}</h6>
+//               <div class =" d-flex gap-3">
+//                 <h6 class = "text-white"><i class="fa-solid fa-bed text-white"></i>${e.beds} Bedrooms</h6>
+//                 <h6 class = "text-white"><i class="fa-solid fa-bath text-white"></i>${e.bathroom}</h6>
+//                 <h6 class = "text-white"><i class="fa-solid fa-car text-white"></i>${e.cars}</h6>
+//                 <h6 class = "text-white"><i class="bi bi-building fw-bold text-white"></i>${e.size}</h6>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//     `
+//   })
+  // edit.push((edit) => {
+  //   id = '',
+  //   amount = '',
+  //   descr = '',
+  //   size = '',
+  //   beds = '',
+  //   cars = '',
+  //   bathroom = '',
+  //   location = '',
+  //   type = ''
+  // });
+  // editData();
+//   localStorage.setItem("data", JSON.stringify(edit));
 // }
+
+
+  // function addData() {
+  //   let add = document.getElementById('addBtn').value
+  //   lists.push({
+  //       id: lists.length + 1,
+  //   amount : '',
+  //   descr : '',
+  //   size : '',
+  //   beds : '',
+  //   cars : '',
+  //   bathroom : '',
+  //   location : '',
+  //   type : ''
+  //   });
+    // editData()
+//     localStorage.setItem('data', JSON.stringify(newProperties))
+// }
+
+function deleteData(id) {
+  newProperties.splice(id-1,1);
+  newProperties.forEach( (element,index) => {
+    element.id = index + 1;
+  });
+  localStorage.setItem("data",JSON.stringify(newProperties));
+  editData(newProperties);
+}
 
 function filteredType(e) {
   const type = e.target.value;
