@@ -33,18 +33,12 @@
                     website's success in this super-competitive market.</p>
             </section>
     </header>
-    <section id="search">
-        <div class="card w-100 bg-transparent d-flex justify-content-center">
+    <section id="search" class="w-100 d-flex justify-content-center">
+        <div class="card ">
             <div class="card-header d-flex justify-content-center">
                 <ul class="nav ">
                     <li class="nav-item">
                         <a class="nav-link active bg-primary text-white">All Status</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active bg-white">For Rent</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active bg-white">For Sale</a>
                     </li>
                 </ul>
             </div>
@@ -52,44 +46,45 @@
                 <div class="row">
                     <div class="col-6">
                         <h5>Looking For</h5>
-                        <select placeholder="Property Type" id="btnSearch" onkeyup="search()">
-                        <option value="apartment" id="btnSearch" onkeyup="search()">Apartment</option>
-                        <option value="condo" id="btnSearch" onkeyup="search()">Condo</option>
-                        <option value="studio" id="btnSearch" onkeyup="search()">Studio</option>
-                        <option value="villa" id="btnSearch" onkeyup="search()">Villa</option>
-                    </select>
+                        <select class="form-select" placeholder="Property Type" id="btnSearch"
+                            onchange="filteredType(event)">
+                            <option selected value="all" id="btnSearch">All</option>
+                            <option value="Apartment" id="btnSearch">Apartment</option>
+                            <option value="Condo" id="btnSearch">Condo</option>
+                            <option value="Studio" id="btnSearch">Studio</option>
+                            <option value="Villa" id="btnSearch">Villa</option>
+                        </select>
                     </div>
                     <div class="col-6">
                         <h5>Location</h5>
-                        <select placeholder="All Cities" id="btnSearch" onkeyup="search()">
-                            <option value="" id="btnSearch" onkeyup="search()">Chicago</option>
-                            <option value="" id="btnSearch" onkeyup="search()">Los Angeles</option>
-                            <option value="" id="btnSearch" onkeyup="search()">Miamai</option>
-                            <option value="" id="btnSearch" onkeyup="search()">New York</option>
+                        <select class="form-select" id="btnSearch" onchange="filteredLocation(event)">
+                            <option selected value="all" id="btnSearch">All</option>
+                            <option value="Chicago" id="btnSearch">Chicago</option>
+                            <option value="Los Angeles" id="btnSearch">Los Angeles</option>
+                            <option value="Miamai" id="btnSearch">Miamai</option>
+                            <option value="New York" id="btnSearch">New York</option>
                         </select>
                     </div>
                     <div class="col-6">
                         <h5>Property Size</h5>
-                        <select placeholder="Bedrooms" id="
-                        btnSearch" onkeyup="search()">
-                        <option value="" id="btnSearch" onkeyup="search()">Bedrooms</option>
-                        <option value="" id="btnSearch" onkeyup="search()">1</option>
-                        <option value="" id="btnSearch" onkeyup="search()">2</option>
-                        <option value="" id="btnSearch" onkeyup="search()">3</option>
-                        <option value="" id="btnSearch" onkeyup="search()">4</option>
+                        <select class="form-select" id="btnSearch" onchange="filteredBedroom(event)">
+                            <option selected value="all" id="btnSearch">All</option>
+                            <option value="1" id="btnSearch">1 Bedroom</option>
+                            <option value="2" id="btnSearch">2 Bedrooms</option>
+                            <option value="3" id="btnSearch">3 Bedrooms</option>
+                            <option value="4" id="btnSearch">4 Bedrooms</option>
                         </select>
                     </div>
                     <div class="col-6">
                         <h4>Your Budget</h4>
-                        <select placeholder="Max. Prices" id="btnSearch" onkeyup="search()">
-                            <option value="" id="btnSearch" onkeyup="search()">$5,000</option>
-                            <option value="" id="btnSearch" onkeyup="search()">$10,000</option>
-                            <option value="" id="btnSearch" onkeyup="search()">$50,000</option>
+                        <select class="form-select" id="btnSearch" onchange="filteredPrice(event)">
+                            <option selected value="all" id="btnSearch">All</option>
+                            <option value="1000" id="btnSearch">$1,000</option>
+                            <option value="2000" id="btnSearch">$2,000</option>
+                            <option value="3000" id="btnSearch">$3,000</option>
+                            <option value="4000" id="btnSearch">$4,000</option>
+                            <option value="5000" id="btnSearch">$5,000</option>
                         </select>
-                    </div>
-                    <div class="col-12 pt-3">
-                        <button onclick="search()" id="btnSearch" class="bg-primary text-white border-0 rounded" style="width: 90px; height: 40px;">
-                            Search</button>
                     </div>
                 </div>
             </div>
@@ -101,7 +96,9 @@
             <p class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
             <div>
                 <div id="propertyList" class="row">
-                    
+                    <div id="searchresults">
+
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,154 +1,284 @@
-const properties = [{
-  id: 1,
-  img: "./images/ap22.jpg",
-  title: "For Rent",
-  descr: "New Apartment Nice View",
-  amount: "$11,000/mo",
-  beds: 3,
-  bathroom: 1,
-  cars: 1,
-  size: "1789 Sq Ft",
-},
-{
-  id: 2,
-  img: "./images/using/ap1.jpg",
-  title: "For Rent",
-  descr: "Light And Modern Apartment",
-  amount: "$4,500/mo",
-  beds: 4,
-  bathroom: 2,
-  cars: 1,
-  size: "1200 Sq Ft",
-},
-{
-  id: 3,
-  img: "./images/using/ap3.jpg",
-  title: "For Rent",
-  descr: "Comfortable Apartment",
-  amount: "$3,700/mo",
-  beds: 1,
-  bathroom: 2,
-  cars: 1,
-  size: "1900 Sq Ft",
-},
-{
-  id: 4,
-  img: "./images/using/apartment-design-impresses-with-innovative-and-sustainable-solutions-0-624859942.jpg",
-  title: "For Rent",
-  descr: "Relaxing Apartment",
-  amount: "$2,800/mo",
-  beds: 1,
-  bathroom: 1,
-  cars: 1,
-  size: "2360 Sq Ft",
-},
-{
-  id: 5,
-  img: "./images/using/istockphoto-1182454305-612x612.jpg",
-  title: "For Rent",
-  descr: "Comfortable Apartment",
-  amount: "$1,600/mo",
-  beds: 4,
-  bathroom: 2,
-  cars: 1,
-  size: "4300 Sq Ft",
-},
-{
-  id: 6,
-  img: "./images/using/scandinavian-style-apartment-nouvel-interior-5.jpg",
-  title: "For Rent",
-  descr: "Complex",
-  amount: "$5,600/mo",
-  beds: 5,
-  bathroom: 3,
-  cars: 1,
-  size: "3450 Sq Ft",
-},
-{
-  id: 7,
-  img: "./images/using/Sleek-and-transitional-modern-apartment-design-scaled.jpg",
-  title: "For Rent",
-  descr: "Green View Design",
-  amount: "$3,500/mo",
-  beds: 1,
-  bathroom: 1,
-  cars: 1,
-  size: "1760 Sq Ft",
-},
-{
-  id: 8,
-  img: "./images/using/sophieeptonphotographyindependentpenthouse-35.jpg",
-  title: "For Rent",
-  descr: "Modern Loft Apartment",
-  amount: "$3,750/mo",
-  beds: 1,
-  bathroom: 1,
-  cars: 1,
-  size: "1678 Sq Ft",
-},
-{
-  id: 9,
-  img: "./images/using/Stylish-Singapore-Apartment_7.jpg",
-  title: "For Rent",
-  descr: "Renovated Kitchen Apartment",
-  amount: "$1,890/mo",
-  beds: 2,
-  bathroom: 2,
-  cars: 1,
-  size: "1320 Sq Ft",
-},
-{
-  id: 10,
-  img: "./images/using/z.jpg",
-  title: "For Rent",
-  descr: "Contemporary Apartment ",
-  amount: "$13,000/mo",
-  beds: 3,
-  bathroom: 1,
-  cars: 1,
-  size: "1200 Sq Ft",
-}
+const properties = [
+  {
+    id: 1,
+    img: "./images/ap22.jpg",
+    title: "For Rent",
+    descr: "New Apartment Nice View",
+    amount: 11000,
+    beds: 3,
+    bathroom: 1,
+    cars: 1,
+    size: "1789 Sq Ft",
+    type:'Condo',
+    location: "Chicago"
+  },
+  {
+    id: 2,
+    img: "./images/using/ap1.jpg",
+    title: "For Rent",
+    descr: "Light And Modern Apartment",
+    amount: 4500,
+    beds: 4,
+    bathroom: 2,
+    cars: 1,
+    size: "1200 Sq Ft",
+    type: 'Apartment',
+    location: 'Los Angeles'
+
+  },
+  {
+    id: 3,
+    img: "./images/using/ap3.jpg",
+    title: "For Rent",
+    descr: "Comfortable Apartment",
+    amount: 3700,
+    beds: 1,
+    bathroom: 2,
+    cars: 1,
+    size: "1900 Sq Ft",
+    type:'Villa',
+    location:'Miamai'
+  },
+  {
+    id: 4,
+    img: "./images/using/apartment-design-impresses-with-innovative-and-sustainable-solutions-0-624859942.jpg",
+    title: "For Rent",
+    descr: "Relaxing Apartment",
+    amount: 2800,
+    beds: 1,
+    bathroom: 1,
+    cars: 1,
+    size: "2360 Sq Ft",
+    type: 'Apartment',
+    location: 'Los Angeles'
+  },
+  {
+    id: 5,
+    img: "./images/using/istockphoto-1182454305-612x612.jpg",
+    title: "For Rent",
+    descr: "Comfortable Apartment",
+    amount: 1600,
+    beds: 4,
+    bathroom: 2,
+    cars: 1,
+    size: "4300 Sq Ft",
+    type:'Condo',
+    location:'New York'
+  },
+  {
+    id: 6,
+    img: "./images/using/scandinavian-style-apartment-nouvel-interior-5.jpg",
+    title: "For Rent",
+    descr: "Complex",
+    amount: 5600,
+    beds: 5,
+    bathroom: 3,
+    cars: 1,
+    size: "3450 Sq Ft",
+    type:'Villa',
+    location: "Chicago"
+  },
+  {
+    id: 7,
+    img: "./images/using/Sleek-and-transitional-modern-apartment-design-scaled.jpg",
+    title: "For Rent",
+    descr: "Green View Design",
+    amount: 3500,
+    beds: 1,
+    bathroom: 1,
+    cars: 1,
+    size: "1760 Sq Ft",
+    type: "Studio",
+    location:'New York'
+  },
+  {
+    id: 8,
+    img: "./images/using/sophieeptonphotographyindependentpenthouse-35.jpg",
+    title: "For Rent",
+    descr: "Modern Loft Apartment",
+    amount: 3750,
+    beds: 1,
+    bathroom: 1,
+    cars: 1,
+    size: "1678 Sq Ft",
+    type: 'Apartment',
+    location: 'Los Angeles'
+  },
+  {
+    id: 9,
+    img: "./images/using/Stylish-Singapore-Apartment_7.jpg",
+    title: "For Rent",
+    descr: "Renovated Kitchen Apartment",
+    amount: 1890,
+    beds: 2,
+    bathroom: 2,
+    cars: 1,
+    size: "1320 Sq Ft",
+    type: 'Apartment',
+    location:'Miamai'
+  },
+  {
+    id: 10,
+    img: "./images/using/z.jpg",
+    title: "For Rent",
+    descr: "Contemporary Apartment ",
+    amount: 13000,
+    beds: 3,
+    bathroom: 1,
+    cars: 1,
+    size: "1200 Sq Ft",
+    type: "Studio",
+    location: "Chicago"
+  },
 ];
 
-let allProperties = document.getElementById("propertyList");
-console.log(allProperties);
+// localStorage.clear();
+
+let listProperties = document.getElementById("listOfProperties");
+
 let newProperties = JSON.parse(localStorage.getItem("data"))
   ? JSON.parse(localStorage.getItem("data"))
-  : [];
+  : properties;
 
-function addData() {
-const propertyContainer = document.getElementById("propertyList");
-properties.forEach((e) => {
+function editData(lists) {
+const propertyContainer = document.getElementById("tableList");
+propertyContainer.innerHTML ='';
+lists.forEach((e) => {
   propertyContainer.innerHTML += `
-        <div class = "container my-2">
-        <h3>Products</h3>
-        <p>Get Best Advertiser In Your Side Pocket</p>
-        <div class = "conatiner">
-        <div class = "row">
-        <div class = "col-md-2">
-        <h5 class = "fw-bold">ID</h5>
-        <li>${e.id}</li>
-        </div>
-        <div class = "col-md-2">
-        <h5 class = "fw-bold">TITLE</h5>
-        <img src = "${e.img}" alt ="${e.title}"/>
-        <li>${e.descr}</li>
-        </div>
-        <div class = "col-md-2">
-
-        </div>
-        <div class = "col-md-2">
-
-        </div>
-        <div class = "col-md-2">
-
-        </div>
-        <div class = "col-md-2">
-        
-        </div>
-        </div>
-        </div>`;
+        <tbody class="border border-2 border-dark">
+        <tr>
+        <th scope="row">${e.id}</th>
+        <td><img src="${e.img}" alt ="img"/></td>
+        <td>${e.amount}</td>
+        <td>${e.descr}</td>
+        <td>${e.size}</td>
+        <td>${e.beds}</td>
+        <td>${e.cars}</td>
+        <td>${e.bathroom}</td>
+        <td><button id="edit" class ="border" onclick ="editsData()"><i  data-bs-toggle="modal" data-bs-target="#EditModal" class="fa-solid fa-pen-to-square"></i></button></td>
+        <td><button id="delete" class ="border" onclick ="deleteData()" ><i data-bs-toggle="modal" data-bs-target="#ConfirmModal" class="fa-solid fa-trash"></i></button></td>
+        </tr>
+        </tbody>
+        `;
 })
 };
 
-addData();
+editData(newProperties);
+
+function editsData() {
+  const edit = document.getElementById("edit").value;
+  edit.innerHTML = '';
+  editContainer.push((e) => {
+    editContainer.innerHTML +=`
+    <div class = "col-md-6 d-flex justify-content-center">
+      <div style="background: url(${e.img}); background-size:cover;background-repeat:no-repeat" class= "card my-2">
+      <div id="hover">
+      </div>
+        <div class = "card-body">
+          <div class = "row justify-content-start align-items-end h-100">
+            <div class = "col-md-6">
+              <button id = "btn" class ="text-white rounded">${e.title}</button>
+              <h5 class = "text-white">${e.descr}</h5>
+              <h6 class = " text-white fw-bold">$${e.amount}</h6>
+              <div class =" d-flex gap-3">
+                <h6 class = "text-white"><i class="fa-solid fa-bed text-white"></i>${e.beds} Bedrooms</h6>
+                <h6 class = "text-white"><i class="fa-solid fa-bath text-white"></i>${e.bathroom}</h6>
+                <h6 class = "text-white"><i class="fa-solid fa-car text-white"></i>${e.cars}</h6>
+                <h6 class = "text-white"><i class="bi bi-building fw-bold text-white"></i>${e.size}</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    `
+  })
+  edit.push((edit) => {
+    id = '',
+    amount = '',
+    descr = '',
+    size = '',
+    beds = '',
+    cars = '',
+    bathroom = '',
+    location = '',
+    type = ''
+  });
+  editsData();
+  localStorage.setItem("data", JSON.stringify(edit));
+}
+
+
+function deleteData(event) {
+  deleteData = event;
+}
+
+function clearDelete(){
+  deleteData = undefined;
+}
+
+// function itemDelete(event){
+//   let  newProperties = JSON.parse(localStorage.getItem("data"));
+
+
+// }
+
+function filteredType(e) {
+  const type = e.target.value;
+  if (type === "all") {
+    return editData(newProperties);
+  }
+  const filtered = newProperties.filter((lists) =>{
+      return lists.type === type
+  } );
+  filtered.forEach( (element,index) => {
+    element.id = index + 1;
+  });
+  return editData(filtered);
+}
+
+function filteredLocation(e) {
+  const location = e.target.value;
+  if (location === "all") {
+    return editData(newProperties);
+  }
+  const filtered = newProperties.filter((lists) =>{
+      return lists.location === location
+  } );
+  filtered.forEach( (element,index) => {
+    element.id = index + 1;
+  });
+  return editData(filtered);
+}
+
+function filteredBedroom(e) {
+  const beds = e.target.value;
+  if (beds === "all") {
+    return editData(newProperties);
+  }
+  const filtered = newProperties.filter((lists) =>{
+      return lists.beds == beds
+  } );
+  filtered.forEach( (element,index) => {
+    element.id = index + 1;
+  });
+  return editData(filtered);
+}
+
+function filteredPrice(e) {
+  const amount = e.target.value;
+  if (amount === "all") {
+    return editData(newProperties);
+  }
+  const filtered = newProperties.filter((lists) =>{
+      return lists.amount <= amount
+  } );
+  filtered.forEach( (element,index) => {
+    element.id = index + 1;
+  });
+  return editData(filtered);
+}
+
+
+
+

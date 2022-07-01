@@ -1,28 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Source+Code+Pro:ital@1&family=Titillium+Web:ital,wght@0,200;1,200&display=swap");
 
 header {
-  background: linear-gradient(
-      rgba(67, 42, 255, 0.45),
-      rgba(35, 112, 255, 0.45)
-    ),
-    url(../images/1515021_v1.jpg);
+  background-image:url(./images/dubaiclouds1.webp);
   background-size: cover;
   background-attachment: fixed;
   overflow-x: hidden;
+  color: black;
 }
 
 #landing {
-  background: linear-gradient(
-    rgba(67, 42, 255, 0.45),
-    rgba(35, 112, 255, 0.45)
-    ),
-    url(../images/1515021_v1.jpg);
+  background-image:url(./images/dubaiclouds1.webp);
   background-size: cover;
   background-attachment: fixed;
   overflow-x: hidden;
   font-family: "Comfortaa", cursive;
   font-family: "Source Code Pro", monospace;
   font-family: "Titillium Web", sans-serif;
+  color: black;
+  
 }
 
 #btn{
@@ -36,9 +31,14 @@ header {
     border: gray;
 }
 
-#btnSearch{
+/* .form-select{
     width: 200px !important;
     height: 40px !important;
+} */
+
+.head{
+  width: 100%;
+
 }
 
 #btn:hover {
@@ -46,29 +46,32 @@ header {
     color: blue !important;
 }
 
-/* .img-fluid{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    overflow-x: hidden;
-} */
-
-img :hover{
-  background-color: gray ;
-
-}
-
 .card{
   width: 600px;
   height: 400px;
+  opacity: 2;
 }
 
+#hover{
+  background: linear-gradient(
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.502)
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  opacity: 0;
+  transition: all 0.5s linear;
+}
 
-
-
-
-
-
+#hover:hover{
+  opacity: 1;
+}
 
 #footer {
     background-color: rgb(51, 51, 212);
@@ -77,4 +80,27 @@ img :hover{
     justify-content: center;
     align-items: center;
 }
+
+#adminID{
+  width: 50px;
+}
+
+table{
+  border-top: black !important;
+  width: 100%;
+}
+
+td img{
+  height: 60px !important;
+  max-width: 80px !important;
+  flex-grow: 1;
+  object-fit: cover;
+}
+
+
+
+
+
+
+
 

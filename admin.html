@@ -5,24 +5,102 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- CSS only -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        <!-- personal links -->
+         <!-- fonts awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+    integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+         <!-- icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <!-- personal links -->
     <link rel="stylesheet" href="./style.css">
     <title>Admin - Point Of Sale </title>
 </head>
 
 <body>
-    <section id="listOfProperties">
-    <div class="container">
-            
+    <section>
+        <div id="listOfProperties" class="container">
+            <h3 class="d-flex justify-content-center">Products</h3>
+            <p class="d-flex justify-content-center">Get Best Advertiser In Your Side Pocket</p>
+            <div class="card-body bg-white w-100 d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-6">
+                        <h5>Looking For</h5>
+                        <select class="form-select" placeholder="Property Type" id="btnSearch"
+                            onchange="filteredType(event)">
+                            <option selected value="all" id="btnSearch">All</option>
+                            <option value="Apartment" id="btnSearch">Apartment</option>
+                            <option value="Condo" id="btnSearch">Condo</option>
+                            <option value="Studio" id="btnSearch">Studio</option>
+                            <option value="Villa" id="btnSearch">Villa</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <h5>Location</h5>
+                        <select class="form-select" id="btnSearch" onchange="filteredLocation(event)">
+                            <option selected value="all" id="btnSearch">All</option>
+                            <option value="Chicago" id="btnSearch">Chicago</option>
+                            <option value="Los Angeles" id="btnSearch">Los Angeles</option>
+                            <option value="Miamai" id="btnSearch">Miamai</option>
+                            <option value="New York" id="btnSearch">New York</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <h5>Property Size</h5>
+                        <select class="form-select" id="btnSearch" onchange="filteredBedroom(event)">
+                            <option selected value="all" id="btnSearch">All</option>
+                            <option value="1" id="btnSearch">1 Bedroom</option>
+                            <option value="2" id="btnSearch">2 Bedrooms</option>
+                            <option value="3" id="btnSearch">3 Bedrooms</option>
+                            <option value="4" id="btnSearch">4 Bedrooms</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <h4>Your Budget</h4>
+                        <select class="form-select" id="btnSearch" onchange="filteredPrice(event)">
+                            <option selected value="all" id="btnSearch">All</option>
+                            <option value="1000" id="btnSearch">$1,000</option>
+                            <option value="2000" id="btnSearch">$2,000</option>
+                            <option value="3000" id="btnSearch">$3,000</option>
+                            <option value="4000" id="btnSearch">$4,000</option>
+                            <option value="5000" id="btnSearch">$5,000</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-        </section>
-    </div>
-        <!-- JavaScript Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            <table id="tableList" class="mt-3">
+                <thead class="gap-2">
+                    <tr class="gap-2 border-top border-1 border-dark">
+                        <th scope="col">ID</th>
+                        <th scope="col">Property</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Size</th>
+                        <th scope="col">Bedrooms</th>
+                        <th scope="col">Cars</th>
+                        <th scope="col">Bathrooms</th>
+                        <th scope="col" id="edit">Edit</th>
+                        <th scope="col" id="delete">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>
+
+                        </th>
+                    </tr>
+                </tbody>
+        </div>
+        </table>
+        </div>
+    </section>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
+     <!-- fonts awesome -->
+     <script src="https://kit.fontawesome.com/ce754b3fc6.js" crossorigin="anonymous">
     </script>
     <script src="./admin.js"></script>
 </body>
